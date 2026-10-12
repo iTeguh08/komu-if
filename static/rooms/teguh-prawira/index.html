@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teguh Prawira — kamar gelap</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="stage" id="stage" data-lit="false">
+		<section class="scene" id="scene">
+			<div class="wall" aria-hidden="true"></div>
+			<div class="floor" aria-hidden="true"></div>
+
+			<h1 class="title">
+				Teguh<br>Prawira
+				<span>IF B Pagi · Angkatan 14</span>
+			</h1>
+
+			<button class="obj poster" data-note="poster" aria-label="Poster angkatan">
+				<span class="poster-top">IF B</span>
+				<span class="poster-mid">Pagi</span>
+				<span class="poster-bot">Angkatan<br>14 · 2026</span>
+			</button>
+
+			<button class="obj window" data-note="window" aria-label="Jendela">
+				<svg viewBox="0 0 220 260" aria-hidden="true">
+					<rect x="6" y="6" width="208" height="248" rx="2" class="sky"/>
+					<path d="M6 130h208M110 6v248" class="stroke"/>
+					<path d="M150 52a26 26 0 1 0 22 40 20 20 0 1 1-22-40Z" class="moon"/>
+					<circle cx="52" cy="48" r="1.6" class="star"/><circle cx="82" cy="92" r="1.2" class="star"/>
+					<circle cx="42" cy="176" r="1.4" class="star"/><circle cx="176" cy="188" r="1.6" class="star"/>
+					<circle cx="130" cy="214" r="1.2" class="star"/>
+					<rect x="6" y="6" width="208" height="248" rx="2" class="stroke" fill="none" stroke-width="5"/>
+				</svg>
+				<span class="tag">jendela</span>
+			</button>
+
+			<button class="obj shelf" data-note="shelf" aria-label="Rak buku">
+				<svg viewBox="0 0 160 210" aria-hidden="true">
+					<path d="M6 104h148M6 200h148" class="stroke" stroke-width="3"/>
+					<rect x="16" y="52" width="14" height="52" class="solid a"/><rect x="32" y="40" width="12" height="64" class="solid b"/>
+					<rect x="46" y="60" width="16" height="44" class="solid c"/><rect x="66" y="46" width="12" height="58" class="solid a"/>
+					<path d="m90 104 14-52 14 4-10 48Z" class="solid b"/>
+					<rect x="22" y="148" width="18" height="52" class="solid c"/><rect x="42" y="136" width="12" height="64" class="solid a"/>
+					<rect x="56" y="152" width="14" height="48" class="solid b"/><rect x="74" y="142" width="16" height="58" class="solid c"/>
+					<circle cx="124" cy="182" r="16" class="stroke" fill="none"/><path d="M124 166v32M108 182h32" class="stroke thin"/>
+				</svg>
+				<span class="tag">rak</span>
+			</button>
+
+			<div class="set">
+				<button class="obj desk" data-note="laptop" aria-label="Laptop di meja">
+					<svg viewBox="0 0 520 230" aria-hidden="true">
+						<path d="M0 140h520" class="stroke" stroke-width="5"/>
+						<path d="M40 144v82M480 144v82" class="stroke" stroke-width="5"/>
+						<rect x="130" y="26" width="220" height="104" rx="4" class="screen"/>
+						<path d="M150 50h60M150 68h110M150 86h84M150 104h128" class="code"/>
+						<path d="M112 130h256l-14 10H126Z" class="solid c"/>
+						<path d="M396 140v-34h34v34" class="stroke"/><path d="M430 116c12 0 12 20 0 20" class="stroke thin" fill="none"/>
+					</svg>
+					<span class="tag">laptop</span>
+				</button>
+
+				<button class="obj lamp" id="lamp" aria-label="Lampu meja, nyalakan atau matikan">
+					<svg viewBox="0 0 90 170" aria-hidden="true">
+						<ellipse cx="40" cy="160" rx="30" ry="6" class="solid c"/>
+						<path d="M40 158 56 90 34 52" class="stroke" fill="none" stroke-width="4"/>
+						<path d="M18 62 38 30l36 24-14 22Z" class="shade"/>
+					</svg>
+					<span class="tag">lampu</span>
+				</button>
+			</div>
+
+			<button class="obj plant" data-note="plant" aria-label="Tanaman">
+				<svg viewBox="0 0 100 190" aria-hidden="true">
+					<path d="M28 120h44l-6 64H34Z" class="solid c"/>
+					<path d="M50 120C50 90 38 66 22 50c-4 26 6 52 28 70Z" class="leaf"/>
+					<path d="M50 120C52 80 66 52 84 38c4 30-8 60-34 82Z" class="leaf"/>
+					<path d="M50 120C46 84 50 40 56 8c14 34 6 80-6 112Z" class="leaf"/>
+				</svg>
+				<span class="tag">tanaman</span>
+			</button>
+
+			<button class="obj quote" id="quote" aria-label="Quote di dinding, klik untuk ganti">
+				<span class="q-text" id="q-text"></span>
+				<span class="q-by" id="q-by"></span>
+			</button>
+
+			<button class="obj radio" id="radio" data-note="radio" aria-label="Radio, putar atau jeda musik">
+				<svg viewBox="0 0 120 84" aria-hidden="true">
+					<path d="M92 20 108 2" class="stroke thin"/>
+					<rect x="6" y="20" width="108" height="60" rx="6" class="solid c"/>
+					<circle cx="40" cy="50" r="20" class="stroke"/><path d="M28 50h24M40 38v24M31 41l18 18M49 41 31 59" class="stroke thin"/>
+					<rect x="72" y="32" width="34" height="14" rx="2" class="screen"/>
+					<g class="eq"><rect x="76" y="36" width="4" height="6"/><rect x="83" y="36" width="4" height="6"/><rect x="90" y="36" width="4" height="6"/><rect x="97" y="36" width="4" height="6"/></g>
+					<circle cx="80" cy="64" r="6" class="stroke thin"/><circle cx="100" cy="64" r="6" class="stroke thin"/>
+				</svg>
+				<span class="tag">radio</span>
+			</button>
+
+			<button class="obj arcade" data-note="arcade" data-game="menu" aria-label="Mesin arcade, buka menu game">
+				<svg viewBox="0 0 90 160" aria-hidden="true">
+					<path d="M12 152V34l8-26h50l8 26v118Z" class="solid c"/>
+					<rect x="22" y="14" width="46" height="14" class="solid a"/><text x="45" y="25" text-anchor="middle" class="crt-sm">ARCADE</text>
+					<rect x="20" y="36" width="50" height="42" rx="3" class="screen"/><text x="45" y="62" text-anchor="middle" class="crt blink">PLAY</text>
+					<path d="M16 96h58l5 16H11Z" class="solid b"/><circle cx="32" cy="102" r="4" class="stroke thin"/><path d="M32 98v-8" class="stroke"/>
+					<circle cx="54" cy="104" r="3.5" class="btn-a"/><circle cx="64" cy="104" r="3.5" class="btn-b"/>
+					<rect x="38" y="124" width="14" height="10" rx="1" class="solid c"/><path d="M45 127v4" class="stroke thin"/>
+				</svg>
+				<span class="tag">arcade</span>
+			</button>
+
+			<button class="obj chess" data-note="chess" data-game="chess" aria-label="Papan catur, buka puzzle catur">
+				<svg viewBox="0 0 160 160" aria-hidden="true">
+					<defs><pattern id="chk" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="20" height="20"/><rect x="20" y="20" width="20" height="20"/></pattern></defs>
+					<rect width="160" height="160" class="b-dark"/><rect width="160" height="160" fill="url(#chk)" class="b-light"/>
+					<rect width="160" height="160" class="stroke"/>
+					<text x="30" y="72" class="pc">&#9822;</text><text x="92" y="132" class="pc k">&#9812;</text><text x="112" y="52" class="pc">&#9823;</text>
+				</svg>
+				<span class="tag">catur</span>
+			</button>
+
+			<button class="obj rubik" id="rubik" data-note="rubik" data-game="rubik" aria-label="Kubus rubik, buka rubik 3D"><span class="cube" id="mini-cube" aria-hidden="true"></span><span class="tag">rubik</span></button>
+
+			<button class="obj pad" id="pad" data-note="pad" data-game="menu" aria-label="Controller game, buka menu game">
+				<svg viewBox="0 0 140 84" aria-hidden="true">
+					<path d="M32 10h76c14 0 22 22 26 46s-8 22-18 10l-14-16H38L24 66C14 78 2 80 6 56 10 32 18 10 32 10Z" class="solid c"/>
+					<path d="M40 25v14M29 32h22" class="stroke" stroke-width="4"/>
+					<circle cx="96" cy="24" r="4" class="pbtn p1"/><circle cx="108" cy="32" r="4" class="pbtn p2"/><circle cx="96" cy="40" r="4" class="pbtn p3"/><circle cx="84" cy="32" r="4" class="pbtn p4"/>
+				</svg>
+				<span class="tag">controller</span>
+			</button>
+
+			<div class="dark" aria-hidden="true"></div>
+			<div class="glow" aria-hidden="true"></div>
+
+			<p class="note" id="note" role="status" aria-live="polite">Gerakkan cahaya. Cari benda di kamar ini.</p>
+		</section>
+
+		<div class="hud" id="hud" hidden role="status" aria-live="polite"><span id="hud-t"></span><button type="button" id="hud-x">Berhenti</button></div>
+
+		<aside class="player" id="player" hidden aria-label="Pemutar musik">
+			<div class="player-box"></div>
+			<div class="player-bar">
+				<span>Oasis · Champagne Supernova</span>
+				<button type="button" id="pp" aria-label="Jeda musik">Jeda</button>
+				<button type="button" id="mu" aria-label="Bisukan">Mute</button>
+				<button type="button" id="px" aria-label="Tutup pemutar">&times;</button>
+			</div>
+		</aside>
+
+		<dialog class="hub" id="hub" aria-labelledby="hub-title">
+			<div class="hub-head"><h2 id="hub-title">Arcade Teguh</h2><button type="button" class="hub-x" id="hub-x" aria-label="Tutup">&times;</button></div>
+			<ul class="hub-menu" id="hub-menu">
+				<li><button type="button" data-g="hunt"><b>Cari Barang</b><span>5 benda hilang di kamar gelap. Cuma ada senter dan 45 detik.</span></button></li>
+				<li><button type="button" data-g="rubik"><b>Rubik 3D</b><span>Putar, acak, lalu biarkan dia menyelesaikannya sendiri.</span></button></li>
+				<li><button type="button" data-g="chess"><b>Mate in 1</b><span>Skakmat dalam satu langkah. Empat posisi.</span></button></li>
+				<li><button type="button" data-g="typing"><b>Ngetik Kode</b><span>Ketik potongan kode secepat dan sebersih mungkin.</span></button></li>
+			</ul>
+			<div class="hub-view" id="hub-view" hidden>
+				<button type="button" class="hub-back" id="hub-back">&larr; Menu</button>
+				<div id="hub-body"></div>
+			</div>
+		</dialog>
+
+		<section class="achievement" id="achievement" aria-labelledby="ach-title">
+			<div class="ach-inner">
+				<h2 id="ach-title">achievement</h2>
+				<p>Sertifikat, lomba, proyek kecil, dan momen yang bikin bangga sepanjang jalan. Sebagian kotak sudah terisi, sisanya menyusul satu per satu.</p>
+				<!-- To swap a placeholder for a photo: add <img src="img/achievement-N.webp" alt="..."> inside its <figure>. -->
+				<figure class="ach-collage">
+				<figure class="ach ach-1"><span class="ach-n" aria-hidden="true">1</span><figcaption>Achievement 1</figcaption></figure>
+				<figure class="ach ach-2"><img src="img/achievement-2.webp" alt="Tim di meja lomba" loading="lazy"><figcaption>Achievement 2</figcaption></figure>
+				<figure class="ach ach-3"><img src="img/achievement-3.webp" alt="Tim di meja lomba, pose lain" loading="lazy"><figcaption>Achievement 3</figcaption></figure>
+				<figure class="ach ach-4"><span class="ach-n" aria-hidden="true">4</span><figcaption>Achievement 4</figcaption></figure>
+				<figure class="ach ach-5"><img src="img/achievement-5.webp" alt="Tim berdiri di panggung" loading="lazy"><figcaption>Achievement 5</figcaption></figure>
+				<figure class="ach ach-6"><span class="ach-n" aria-hidden="true">6</span><figcaption>Achievement 6</figcaption></figure>
+				<figure class="ach ach-7"><img src="img/achievement-7.webp" alt="Juara 1 di depan poster lomba" loading="lazy"><figcaption>Achievement 7</figcaption></figure>
+				<figure class="ach ach-8"><img src="img/achievement-8.webp" alt="Pemenang runner up memegang papan penghargaan" loading="lazy"><figcaption>Achievement 8</figcaption></figure>
+				<figure class="ach ach-9"><img src="img/achievement-9.webp" alt="Tim berfoto di depan backdrop lomba" loading="lazy"><figcaption>Achievement 9</figcaption></figure>
+				<figure class="ach ach-10"><span class="ach-n" aria-hidden="true">10</span><figcaption>Achievement 10</figcaption></figure>
+				<figure class="ach ach-11"><img src="img/achievement-11.webp" alt="Runner up, tim di atas panggung" loading="lazy"><figcaption>Achievement 11</figcaption></figure>
+				</figure>
+				<p class="ach-credit">Foto lomba terbaru, kotak kosong menyusul</p>
+			</div>
+		</section>
+
+		<button class="switch" id="switch" type="button" aria-pressed="false">Nyalakan semua lampu</button>
+	</main>
+
+	<script src="script.js"></script>
+	<script src="games.js"></script>
+	<script src="../../nav.js"></script>
+</body>
+</html>

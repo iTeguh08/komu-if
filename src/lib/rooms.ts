@@ -5,8 +5,9 @@ export type Room = {
 	handle: string;
 	name: string;
 	tagline: string;
+	door_code: string;
 	tags?: string[];
-	thumb?: { src: string; w: number; h: number };
+	thumb: { src: string; w: number; h: number };
 	accent?: string;
 	entry?: string;
 };
