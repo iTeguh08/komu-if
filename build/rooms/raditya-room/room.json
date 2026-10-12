@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "handle": "raditya-room",
+  "name": "Raditya's Room",
+  "tagline": "Stylized 3D bedroom with Spotify radio and wall memories.",
+  "tags": [
+    "3d",
+    "threejs",
+    "interactive",
+    "music"
+  ],
+  "thumb": {
+    "src": "thumb.png",
+    "w": 800,
+    "h": 600
+  },
+  "accent": "#d97706"
+}
