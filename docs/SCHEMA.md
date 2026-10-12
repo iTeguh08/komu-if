@@ -7,10 +7,11 @@ Only one data file: `static/rooms/<handle>/room.json`. No database.
 |---|---|---|---|
 | `v` | integer | yes | Always `1`. Bump when the shape changes |
 | `handle` | string | yes | `^[a-z0-9-]{2,24}$`. Must equal the folder name. Not your NIM |
-| `name` | string | yes | Display name, 1 to 40 chars |
+| `name` | string | yes | Display name (nickname on the gallery door), 1 to 40 chars |
+| `door_code` | string | yes | Two digits `^[0-9]{2}$` (e.g. `50`, `07`). Shown on the gallery door. Unique per room. Not your full NIM |
 | `tagline` | string | yes | 1 to 80 chars |
 | `tags` | string[] | no | Max 5, each `^[a-z0-9-]{2,16}$` |
-| `thumb` | object | yes | `{ "src": "thumb.webp", "w": 800, "h": 1000 }`. `w`/`h` set the card aspect ratio |
+| `thumb` | object | yes | `{ "src": "thumb.webp", "w": 800, "h": 1000 }`. Required file; gallery uses the door, not this image |
 | `accent` | string | no | Hex color `#rrggbb` used for the card hover glow |
 | `entry` | string | no | Default `index.html`. Relative path inside the folder |
 | `links` | object | no | Keys: `github`, `instagram`, `site`. Values: `https://` URLs only |
@@ -23,11 +24,12 @@ Unknown fields are a CI error. This prevents silent typos.
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["v", "handle", "name", "tagline", "thumb"],
+  "required": ["v", "handle", "name", "door_code", "tagline", "thumb"],
   "properties": {
     "v": { "const": 1 },
     "handle": { "type": "string", "pattern": "^[a-z0-9-]{2,24}$" },
     "name": { "type": "string", "minLength": 1, "maxLength": 40 },
+    "door_code": { "type": "string", "pattern": "^[0-9]{2}$" },
     "tagline": { "type": "string", "minLength": 1, "maxLength": 80 },
     "tags": {
       "type": "array",
@@ -65,6 +67,7 @@ Unknown fields are a CI error. This prevents silent typos.
   "v": 1,
   "handle": "teguh",
   "name": "Teguh",
+  "door_code": "50",
   "tagline": "Builds things at 2 AM.",
   "tags": ["web", "music"],
   "thumb": { "src": "thumb.webp", "w": 800, "h": 1000 },
@@ -79,6 +82,7 @@ export type Room = {
   v: 1;
   handle: string;
   name: string;
+  door_code: string;
   tagline: string;
   tags?: string[];
   thumb: { src: string; w: number; h: number };
