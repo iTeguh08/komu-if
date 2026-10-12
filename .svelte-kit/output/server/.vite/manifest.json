@@ -1,0 +1,186 @@
+{
+  ".svelte-kit/generated/build/env/config.js": {
+    "file": "env.js",
+    "name": "env",
+    "src": ".svelte-kit/generated/build/env/config.js",
+    "isEntry": true
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_server-errors.js"
+    ]
+  },
+  "_rooms.js": {
+    "file": "chunks/rooms.js",
+    "name": "rooms",
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_server-errors.js": {
+    "file": "chunks/server-errors.js",
+    "name": "server-errors"
+  },
+  "_server.js": {
+    "file": "chunks/server.js",
+    "name": "server"
+  },
+  "_server2.js": {
+    "file": "chunks/server2.js",
+    "name": "server"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-cyrillic-ext-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-cyrillic-ext-wght-normal.X_5orZeX.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-cyrillic-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-cyrillic-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-cyrillic-wght-normal.DiZS0aHC.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-cyrillic-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-ext-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-latin-ext-wght-normal.Bwz-egvJ.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-latin-wght-normal.XN7g48iV.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-symbols2-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-symbols2-wght-normal.CO5SzqOn.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-symbols2-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist-mono/files/geist-mono-vietnamese-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-mono-vietnamese-wght-normal.DadHysG0.woff2",
+    "src": "node_modules/@fontsource-variable/geist-mono/files/geist-mono-vietnamese-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-cyrillic-ext-wght-normal.DjL33-gN.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-cyrillic-wght-normal.BEAKL7Jp.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-latin-ext-wght-normal.DC-KSUi6.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-latin-wght-normal.BgDaEnEv.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2": {
+    "file": "_app/immutable/assets/geist-vietnamese-wght-normal.6IgcOCM7.woff2",
+    "src": "node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2"
+  },
+  "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff": {
+    "file": "_app/immutable/assets/instrument-serif-latin-400-normal.BVbkICAY.woff",
+    "src": "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff"
+  },
+  "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2": {
+    "file": "_app/immutable/assets/instrument-serif-latin-400-normal.DnYpCC2O.woff2",
+    "src": "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_server.js",
+      "_internal.js",
+      "_server-errors.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_server-errors.js",
+      "_server2.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_server.js",
+      "_internal.js"
+    ],
+    "dynamicImports": [
+      "node_modules/@sveltejs/kit/src/runtime/server/instance.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/instance.js": {
+    "file": "chunks/instance.js",
+    "name": "instance",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/instance.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_internal.js",
+      "_server-errors.js",
+      ".svelte-kit/generated/build/env/config.js",
+      "_server2.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_rooms.js",
+      "_server2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.DP61Azhq.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/instrument-serif-latin-400-normal.DnYpCC2O.woff2",
+      "_app/immutable/assets/instrument-serif-latin-400-normal.BVbkICAY.woff",
+      "_app/immutable/assets/geist-cyrillic-ext-wght-normal.DjL33-gN.woff2",
+      "_app/immutable/assets/geist-cyrillic-wght-normal.BEAKL7Jp.woff2",
+      "_app/immutable/assets/geist-vietnamese-wght-normal.6IgcOCM7.woff2",
+      "_app/immutable/assets/geist-latin-ext-wght-normal.DC-KSUi6.woff2",
+      "_app/immutable/assets/geist-latin-wght-normal.BgDaEnEv.woff2",
+      "_app/immutable/assets/geist-mono-cyrillic-ext-wght-normal.X_5orZeX.woff2",
+      "_app/immutable/assets/geist-mono-cyrillic-wght-normal.DiZS0aHC.woff2",
+      "_app/immutable/assets/geist-mono-symbols2-wght-normal.CO5SzqOn.woff2",
+      "_app/immutable/assets/geist-mono-vietnamese-wght-normal.DadHysG0.woff2",
+      "_app/immutable/assets/geist-mono-latin-ext-wght-normal.Bwz-egvJ.woff2",
+      "_app/immutable/assets/geist-mono-latin-wght-normal.XN7g48iV.woff2"
+    ]
+  },
+  "src/routes/+layout.ts": {
+    "file": "entries/pages/_layout.ts.js",
+    "name": "entries/pages/_layout.ts",
+    "src": "src/routes/+layout.ts",
+    "isEntry": true
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_rooms.js",
+      "_server2.js"
+    ]
+  },
+  "src/routes/rooms.json/+server.ts": {
+    "file": "entries/endpoints/rooms.json/_server.ts.js",
+    "name": "entries/endpoints/rooms.json/_server.ts",
+    "src": "src/routes/rooms.json/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_rooms.js"
+    ]
+  }
+}
