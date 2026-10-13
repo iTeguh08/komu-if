@@ -1,4 +1,4 @@
-import { xt as resolve } from "../../chunks/internal.js";
+import { bt as asset, xt as resolve } from "../../chunks/internal.js";
 import { n as rooms, t as roomUrl } from "../../chunks/rooms.js";
 import { a as head, i as ensure_array_like, l as attr, t as attr_class, u as escape_html } from "../../chunks/server2.js";
 //#region src/lib/assets/favicon.svg
@@ -26,7 +26,7 @@ function _layout($$renderer, $$props) {
 		} else $$renderer.push(`<!--[!--><li class="px-3 py-2">No rooms yet.</li>`);
 		$$renderer.push(`<!--]--></ul></details></div></nav></header> `);
 		children($$renderer);
-		$$renderer.push(`<!----> <footer class="border-t border-line"><div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 text-sm text-mute"><a href="https://github.com/iTeguh08/komu-if" class="hover:text-ink">Source on GitHub</a> <a href="https://github.com/iTeguh08/komu-if/blob/master/docs/RULES.md" class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent">Add your room</a></div></footer>`);
+		$$renderer.push(`<!----> <footer class="mt-16 border-t border-line"><figure class="relative w-full aspect-[1200/404] overflow-hidden bg-wall"><img${attr("src", asset("footer.webp"))} alt="Teman-teman IF B Pagi Angkatan 14 berfoto di kelas" width="1200" height="404" loading="lazy" class="absolute inset-0 size-full object-cover"/> <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_90%,rgb(255_170_70_/_0.22),transparent_62%),radial-gradient(ellipse_at_82%_70%,rgb(120_100_200_/_0.15),transparent_66%),linear-gradient(rgb(8_6_12_/_0.45),rgb(8_6_12_/_0.85))]" aria-hidden="true"></div> <figcaption class="absolute inset-x-0 bottom-0 p-6 font-display text-2xl text-ink sm:text-3xl md:p-8">IF B Pagi · Angkatan 14</figcaption></figure> <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 text-sm text-mute"><a href="https://github.com/iTeguh08/komu-if" class="hover:text-ink">Source on GitHub</a> <a href="https://github.com/iTeguh08/komu-if/blob/master/docs/RULES.md" class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent">Add your room</a></div></footer>`);
 	});
 }
 //#endregion
