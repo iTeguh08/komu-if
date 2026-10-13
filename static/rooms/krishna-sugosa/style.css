@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper-container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Press Start 2P','system ui';
+}
+
+#container{
+    background-image: url('./img-car/3-lane-road.png');
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: -50px 0px;
+    border: 1px solid black;
+    margin-top: 10px;
+    overflow: hidden;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    animation: bg 0.3s infinite linear;
+}
+
+@keyframes bg{
+    from{
+        background-position: -52px -160px;
+    }
+    to{
+        background-position: -52px 0px;
+    }
+}
+
+#car{
+    background-image: url('./img-car/car.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 78px;
+    width: 40px;
+    height: 90px;
+    position: relative;
+    top: 280px;
+    left: 130px;
+}
+
+#opp-car{
+    background-image: url('./img-car/opp-car.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    width: 40px;
+    height: 90px;
+    position: relative;
+    top: 0px;
+    left: 130px;
+    animation: down 2s infinite linear;
+}
+
+@keyframes down{
+    from{
+        top: -200%;
+    }to{
+        top: 100%;
+    }
+}
+
+.position-btn{
+    margin-top: 20px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border-radius: 8px;
+    width: 100px;
+    height: 60px;
+    font-family: 'Press Start 2P','system ui';  
+}
