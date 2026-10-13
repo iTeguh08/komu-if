@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '#lib/assets/favicon.svg';
-	import { resolve } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import { rooms, roomUrl } from '#lib/rooms.ts';
 	import type { LayoutProps } from './$types';
 
@@ -59,7 +59,26 @@
 
 {@render children()}
 
-<footer class="border-t border-line">
+<footer class="mt-16 border-t border-line">
+	<figure class="relative w-full aspect-[1200/404] overflow-hidden bg-wall">
+		<img
+			src={asset('footer.webp')}
+			alt="Teman-teman IF B Pagi Angkatan 14 berfoto di kelas"
+			width="1200"
+			height="404"
+			loading="lazy"
+			class="absolute inset-0 size-full object-cover"
+		/>
+		<div
+			class="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_90%,rgb(255_170_70_/_0.22),transparent_62%),radial-gradient(ellipse_at_82%_70%,rgb(120_100_200_/_0.15),transparent_66%),linear-gradient(rgb(8_6_12_/_0.45),rgb(8_6_12_/_0.85))]"
+			aria-hidden="true"
+		></div>
+		<figcaption
+			class="absolute inset-x-0 bottom-0 p-6 font-display text-2xl text-ink sm:text-3xl md:p-8"
+		>
+			IF B Pagi · Angkatan 14
+		</figcaption>
+	</figure>
 	<div
 		class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 text-sm text-mute"
 	>

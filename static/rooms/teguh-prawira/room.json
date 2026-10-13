@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "handle": "teguh-prawira",
+  "door_code": "50",
+  "name": "Teguh Prawira",
+  "tagline": "Kamar gelap. Bawa senter.",
+  "tags": ["interactive", "art"],
+  "thumb": { "src": "thumb.webp", "w": 800, "h": 1000 },
+  "accent": "#ffb454"
+}

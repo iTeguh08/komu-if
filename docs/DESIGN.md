@@ -3,12 +3,12 @@
 Status: **proposal**. Visual direction was not specified, so this is a default to react to. Veto freely.
 
 ## Concept
-The shell is a **quiet museum wall**. Neutral, dark, almost no color of its own. The rooms bring all the color. The gallery should look best when 40 wildly different thumbnails sit side by side, so the frame must never compete with them.
+The shell is a **quiet corridor of doors**. Neutral, dark, almost no color of its own. Each room is a gate with one door number and a nickname; room pages bring the color. The frame must never compete with them.
 
 ## Principles
 1. Frame, don't compete: shell is monochrome plus one accent.
 2. Fair: no ranking, no featured rooms. (Order is alphabetical for now, see Decisions.)
-3. Thumbnails are the content. Text is secondary.
+3. Gallery doors are uniform; identity is the door number + nickname. Text is secondary.
 4. Leaving a room and coming back must feel effortless.
 
 ## Tokens (Tailwind v4 `@theme`)
@@ -29,8 +29,8 @@ Fonts: self-host via Fontsource to avoid a third-party request.
 ## Gallery layout
 - Header: small wordmark `komu-if` left, `IF B Pagi · Angkatan 14` right, tiny. No hero banner.
 - Tag filter: one row of pills under the header, horizontally scrollable on mobile.
-- Wall: CSS columns masonry (`columns-2 md:columns-3 xl:columns-4`), gap 16px. Card height comes from `thumb.w/h`, so there is no layout shift.
-- Card: thumbnail fills the frame. On hover/focus: slight darken, name (Instrument Serif), tagline, and a glow border using the room's `accent`. Touch devices show name permanently as a bottom gradient label.
+- Wall: CSS columns masonry (`columns-2 md:columns-3 xl:columns-4`), gap 16px. Cards use fixed `aspect-[4/5]` (door shape).
+- Card: SVG gate frame (casing, arch lintel, center split, threshold) with large mono `door_code` on the doors; nickname and tagline on the sill below. Hover/focus: glow border using the room's `accent`. `thumb.webp` is not shown on the wall (still required in each room folder).
 - Footer: link to the repo and "Add your room" (CONTRIBUTING).
 
 ## Room entry
