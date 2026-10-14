@@ -12,9 +12,9 @@
 	data-sveltekit-reload
 	style:--glow={glow}
 	aria-label="Pintu {room.door_code}, {room.name}"
-	class="door-card group relative flex aspect-[4/5] w-full flex-col overflow-hidden rounded-xs border border-line bg-wall transition-[border-color,box-shadow] duration-200 hover:border-(--glow) hover:shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--glow)_35%,transparent)] focus-visible:border-(--glow) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+	class="door-card group relative flex h-full w-full flex-col overflow-hidden rounded-xs border border-line bg-wall transition-[border-color,box-shadow] duration-200 hover:border-(--glow) hover:shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--glow)_35%,transparent)] focus-visible:border-(--glow) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 >
-	<div class="relative isolate min-h-0 flex-[1.2] overflow-hidden px-5 pt-5 pb-3">
+	<div class="relative isolate aspect-[4/3] shrink-0 overflow-hidden px-5 pt-5 pb-3">
 		<svg
 			class="pointer-events-none absolute inset-x-5 top-4 bottom-5 text-line transition-colors duration-200 group-hover:text-(--glow)"
 			viewBox="0 0 100 118"
@@ -46,7 +46,7 @@
 	</div>
 
 	<div
-		class="relative z-20 shrink-0 border-t-2 border-line bg-wall px-4 py-4 shadow-[0_-12px_28px_rgb(0_0_0/0.55)]"
+		class="relative z-20 flex-1 border-t-2 border-line bg-wall px-4 py-4 shadow-[0_-12px_28px_rgb(0_0_0/0.55)]"
 	>
 		<h2 class="font-display text-xl leading-snug text-ink sm:text-2xl">{room.name}</h2>
 		<p class="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink/75">{room.tagline}</p>

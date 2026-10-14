@@ -46,6 +46,7 @@ body {
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
+	min-height: 100dvh;
 	overflow-x: hidden;
 }
 
@@ -53,6 +54,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100vh;
+	height: 100dvh;
 	min-height: 580px;
 	overflow: hidden;
 	cursor: default;
@@ -216,7 +218,7 @@ body {
 .note {
 	position: absolute;
 	left: 50%;
-	bottom: 2.5rem;
+	bottom: 4.5rem;
 	width: min(34rem, calc(100vw - 2rem));
 	transform: translateX(-50%);
 	text-align: center;
@@ -256,7 +258,6 @@ body {
 	.plant { left: 78vw; bottom: 8vh; width: 14vw; }
 	.wall { inset: 0 0 20% 0; }
 	.floor { inset: 80% 0 0 0; }
-	.note { bottom: 2rem; }
 	.quote { left: 6vw; top: 43vh; width: 52vw; }
 	.radio { left: 64vw; top: 53vh; width: 16vw; }
 	.arcade { left: 73vw; bottom: 8vh; width: 14vw; }
@@ -374,3 +375,7 @@ body {
 .ty-in { width: 100%; margin-top: 0.8rem; padding: 0.7rem 0.9rem; font: 500 1rem / 1.2 ui-monospace, monospace; color: var(--ink); background: #1b1724; border: 1px solid #3a3446; border-radius: 4px; }
 @media (pointer: coarse) { .scene { touch-action: pan-y; } .hunt-item { cursor: auto; } }
 @media (prefers-reduced-motion: reduce) { .cube, .blink, .radio.on .eq rect, .pad.press .pbtn { animation: none; } }
+
+@media (pointer: coarse) {
+	.switch { min-height: 44px; }
+}

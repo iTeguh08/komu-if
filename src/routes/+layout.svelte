@@ -24,7 +24,7 @@
 			<span class="hidden sm:block">IF B Pagi · Angkatan 14</span>
 			<details class="relative" bind:open>
 				<summary
-					class="flex cursor-pointer list-none items-center gap-1.5 text-ink [&::-webkit-details-marker]:hidden"
+					class="flex cursor-pointer list-none items-center gap-1.5 text-ink pointer-coarse:min-h-11 [&::-webkit-details-marker]:hidden"
 				>
 					Rooms
 					<span class="font-mono text-xs text-mute tabular-nums">{rooms.length}</span>
@@ -45,7 +45,7 @@
 							<a
 								href={roomUrl(r)}
 								data-sveltekit-reload
-								class="block min-h-6 rounded-xs px-3 py-2.5 text-ink hover:bg-line">{r.name}</a
+								class="flex items-center rounded-xs px-3 py-2 text-ink hover:bg-line pointer-coarse:min-h-11">{r.name}</a
 							>
 						</li>
 					{:else}
@@ -82,10 +82,10 @@
 	<div
 		class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 text-sm text-mute"
 	>
-		<a href="https://github.com/iTeguh08/komu-if" class="hover:text-ink">Source on GitHub</a>
+		<a href="https://github.com/iTeguh08/komu-if" class="hover:text-ink pointer-coarse:py-3">Source on GitHub</a>
 		<a
 			href="https://github.com/iTeguh08/komu-if/blob/master/docs/RULES.md"
-			class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent"
+			class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent pointer-coarse:py-3"
 			>Add your room</a
 		>
 	</div>

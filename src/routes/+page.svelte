@@ -11,13 +11,13 @@
 	<h1 class="sr-only">Class rooms</h1>
 
 	{#if tags.length}
-		<div class="mb-8 flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Filter by tag">
+		<div class="mb-8 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="group" aria-label="Filter by tag">
 			{#each [null, ...tags] as t (t)}
 				<button
 					type="button"
 					aria-pressed={active === t}
 					onclick={() => (active = t)}
-					class="min-h-6 shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-xs transition-colors duration-200 {active ===
+					class="shrink-0 rounded-full pointer-coarse:min-h-11 border px-3.5 py-1.5 font-mono text-xs transition-colors duration-200 {active ===
 					t
 						? 'border-accent bg-accent text-wall'
 						: 'border-line text-mute hover:text-ink'}"
@@ -38,9 +38,9 @@
 			>
 		</p>
 	{:else}
-		<ul class="columns-2 gap-4 md:columns-3 xl:columns-4">
+		<ul class="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
 			{#each shown as r, i (r.handle)}
-				<li class="reveal mb-4 break-inside-avoid" style:--i={i}>
+				<li class="reveal" style:--i={i}>
 					<RoomDoorCard room={r} />
 				</li>
 			{/each}

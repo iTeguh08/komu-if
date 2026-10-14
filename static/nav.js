@@ -3,7 +3,7 @@
 (() => {
 	const root = new URL('.', document.currentScript.src); // site root, any base path
 	const host = document.createElement('div');
-	host.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483647';
+	host.style.cssText = 'position:fixed;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));z-index:2147483647';
 	const s = host.attachShadow({ mode: 'open' });
 	const svg = (d) =>
 		`<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="${d}"/></svg>`;
@@ -14,9 +14,10 @@
 		a,button{display:flex;align-items:center;gap:6px;color:#ecebe6;background:none;border:0;border-radius:99px;padding:9px 14px;cursor:pointer;text-decoration:none;transition:background .2s}
 		a:hover,button:hover{background:#222221}
 		a:focus-visible,button:focus-visible{outline:2px solid #ff5a36;outline-offset:1px}
-		ul{display:none;position:absolute;bottom:48px;left:0;width:224px;max-height:60vh;overflow:auto;margin:0;padding:4px;list-style:none;background:#0b0b0c;border:1px solid #222221;border-radius:2px}
+		ul{display:none;position:absolute;bottom:calc(100% + 6px);left:0;width:224px;max-height:60vh;overflow:auto;margin:0;padding:4px;list-style:none;background:#0b0b0c;border:1px solid #222221;border-radius:2px}
 		ul.o{display:block}
 		li a{border-radius:2px;padding:10px 12px}
+		@media (pointer:coarse){a,button{min-height:44px}}
 		@media (prefers-reduced-motion:reduce){a,button{transition:none}}
 	</style>
 	<ul id="l"></ul>
