@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-2_BvIwCH.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BjOVJkwI.css">
+  <script type="module" crossorigin src="./assets/index-TqqJFxAI.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-se_4dKS1.css">
 </head>
 <body>
   <div id="app-container">
@@ -19,6 +19,36 @@
 
     <!-- HUD Top-Right: Interactive Controls Toolbar -->
     <nav class="hud-panel controls-toolbar" aria-label="Room Controls">
+      <!-- Room Focus Navigator: 4 Connected Rooms + Penthouse Suite -->
+      <div class="room-switcher-pill" role="group" aria-label="Geser Sudut Pandang Ruangan">
+        <button id="btn-room-bath" class="room-pill-btn" type="button" aria-label="Fokus Kamar Mandi" title="Geser pandangan ke Kamar Mandi">
+          <span aria-hidden="true">🛁</span>
+          <span>Mandi</span>
+        </button>
+        <button id="btn-room-kitchen" class="room-pill-btn" type="button" aria-label="Fokus Dapur" title="Geser pandangan ke Dapur">
+          <span aria-hidden="true">🍳</span>
+          <span>Dapur</span>
+        </button>
+        <button id="btn-room-bedroom" class="room-pill-btn active" type="button" aria-label="Fokus Kamar Tidur" title="Geser pandangan ke Kamar Tidur">
+          <span aria-hidden="true">🛏️</span>
+          <span>Kamar</span>
+        </button>
+        <button id="btn-room-gaming" class="room-pill-btn" type="button" aria-label="Fokus Arcade Room" title="Geser pandangan ke Arcade Room">
+          <span aria-hidden="true">🎮</span>
+          <span>Arcade</span>
+        </button>
+        <button id="btn-room-suite" class="room-pill-btn" type="button" aria-label="Lihat Semua Suite" title="Lihat seluruh suite 4 ruangan berdampingan">
+          <span aria-hidden="true">✨</span>
+          <span>Suite</span>
+        </button>
+      </div>
+
+      <!-- Arcade Hub Trigger -->
+      <button id="btn-open-arcade" class="toolbar-btn arcade-trigger-btn" type="button" aria-label="Buka Game Arcade & Catur" title="Mainkan Catur, Space Defender, Pong & Snake">
+        <span aria-hidden="true">👾</span>
+        <span>Arcade</span>
+      </button>
+
       <!-- Lighting Preset Toggle -->
       <button id="btn-lighting-preset" class="toolbar-btn" type="button" aria-label="Toggle Lighting Atmosphere" title="Switch between Morning Sun and Cozy Evening">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -272,6 +302,46 @@
         </div>
       </div>
 
+      <!-- 5. Raditya's Arcade & Game Hub Modal -->
+      <div id="arcade-hub-modal" class="modal-card arcade-modal-card" style="display: none;">
+        <button class="modal-close-btn" id="arcade-modal-close-btn" type="button" aria-label="Tutup Arcade">✕</button>
+        <div class="arcade-modal-body">
+          <div class="arcade-header">
+            <div class="arcade-brand-badge">
+              <span class="arcade-badge-icon" aria-hidden="true">👾</span>
+              <span>RADITYA CYBER ARCADE &amp; GAME ZONE</span>
+            </div>
+            <h2 id="arcade-current-title" class="arcade-title">Catur Real-Time</h2>
+            <p id="arcade-current-desc" class="arcade-subtitle">Mainkan catur lengkap 8x8 melawan Raditya AI atau temanmu secara lokal.</p>
+          </div>
+
+          <!-- Game Selection Tabs -->
+          <div class="arcade-hub-tabs" role="tablist">
+            <button class="arcade-hub-tab active" data-game="chess" type="button" role="tab">
+              <span aria-hidden="true">♟️</span>
+              <span>Catur 8x8</span>
+            </button>
+            <button class="arcade-hub-tab" data-game="space" type="button" role="tab">
+              <span aria-hidden="true">🚀</span>
+              <span>Space Defender</span>
+            </button>
+            <button class="arcade-hub-tab" data-game="pong" type="button" role="tab">
+              <span aria-hidden="true">🏓</span>
+              <span>Cyber Pong</span>
+            </button>
+            <button class="arcade-hub-tab" data-game="snake" type="button" role="tab">
+              <span aria-hidden="true">🐍</span>
+              <span>Cyber Snake</span>
+            </button>
+          </div>
+
+          <!-- Game Mount Container -->
+          <div id="arcade-game-mount" class="arcade-game-viewport">
+            <!-- Game renders here dynamically -->
+          </div>
+        </div>
+      </div>
+
       <!-- 3. Room Info / Help Modal -->
       <div id="info-modal" class="modal-card" style="display: none;">
         <button class="modal-close-btn" type="button" aria-label="Close info modal">✕</button>
@@ -313,6 +383,77 @@
             <p class="info-section-text">
               Photos, captions, dimensions, and the external game destination are modularly managed in <code>src/config/roomConfig.js</code>.
             </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. The Sims-Style Character Command Menu -->
+      <div id="sims-action-modal" class="modal-card sims-modal-card" style="display: none;">
+        <button id="sims-modal-close-btn" class="modal-close-btn" type="button" aria-label="Tutup Menu Sims">✕</button>
+        <div class="sims-modal-header">
+          <div class="sims-portrait-wrap">
+            <div id="sims-char-avatar" class="sims-avatar">👤</div>
+            <div class="sims-plumbob-badge" aria-hidden="true">💎</div>
+          </div>
+          <div class="sims-char-info">
+            <h2 id="sims-char-name" class="sims-char-name">Raditya</h2>
+            <p id="sims-char-status" class="sims-char-status">Mood: Sangat Bersemangat ✨</p>
+          </div>
+        </div>
+
+        <div class="sims-modal-body">
+          <p class="sims-prompt">Pilih aktivitas karakter ala The Sims untuk dijalankan:</p>
+          <div class="sims-action-grid">
+            <button class="sims-action-btn" data-action="cook" type="button">
+              <span class="sims-btn-icon">🍳</span>
+              <span class="sims-btn-label">Masak di Dapur</span>
+              <span class="sims-btn-room">Dapur</span>
+            </button>
+            <button class="sims-action-btn" data-action="coffee" type="button">
+              <span class="sims-btn-icon">☕</span>
+              <span class="sims-btn-label">Seduh Espresso</span>
+              <span class="sims-btn-room">Dapur</span>
+            </button>
+            <button class="sims-action-btn" data-action="bath" type="button">
+              <span class="sims-btn-icon">🛁</span>
+              <span class="sims-btn-label">Mandi Air Hangat</span>
+              <span class="sims-btn-room">Kamar Mandi</span>
+            </button>
+            <button class="sims-action-btn" data-action="wash" type="button">
+              <span class="sims-btn-icon">🪞</span>
+              <span class="sims-btn-label">Cuci Muka &amp; Cermin</span>
+              <span class="sims-btn-room">Kamar Mandi</span>
+            </button>
+            <button class="sims-action-btn" data-action="code" type="button">
+              <span class="sims-btn-icon">💻</span>
+              <span class="sims-btn-label">Ngoding di PC Gaming</span>
+              <span class="sims-btn-room">Arcade Zone</span>
+            </button>
+            <button class="sims-action-btn" data-action="chess" type="button">
+              <span class="sims-btn-icon">♟️</span>
+              <span class="sims-btn-label">Main Catur 3D</span>
+              <span class="sims-btn-room">Arcade Zone</span>
+            </button>
+            <button class="sims-action-btn" data-action="arcade" type="button">
+              <span class="sims-btn-icon">🚀</span>
+              <span class="sims-btn-label">Main Space Defender</span>
+              <span class="sims-btn-room">Arcade Zone</span>
+            </button>
+            <button class="sims-action-btn" data-action="sleep" type="button">
+              <span class="sims-btn-icon">🛏️</span>
+              <span class="sims-btn-label">Rebahan di Kasur</span>
+              <span class="sims-btn-room">Kamar Tidur</span>
+            </button>
+            <button class="sims-action-btn" data-action="couple" type="button">
+              <span class="sims-btn-icon">💬</span>
+              <span class="sims-btn-label">Ajak Ngobrol Pasangan</span>
+              <span class="sims-btn-room">Berdua</span>
+            </button>
+            <button class="sims-action-btn auto-action" data-action="wander" type="button">
+              <span class="sims-btn-icon">🚶</span>
+              <span class="sims-btn-label">Jalan Santai Bebas</span>
+              <span class="sims-btn-room">Autonom</span>
+            </button>
           </div>
         </div>
       </div>

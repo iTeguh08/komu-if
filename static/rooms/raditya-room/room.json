@@ -1,12 +1,19 @@
 {
   "v": 1,
   "handle": "raditya-room",
+  "door_code": "48",
   "name": "Raditya's Room",
-  "tagline": "Stylized 3D bedroom with Spotify radio and wall memories.",
+  "tagline": "Stylized 4-room 3D penthouse suite with kitchen, bathroom, arcade, real-time chess, and The Sims simulation.",
   "tags": [
     "3d",
     "threejs",
+    "the-sims",
     "interactive",
+    "gaming",
+    "kitchen",
+    "bathroom",
+    "chess",
+    "arcade",
     "music"
   ],
   "thumb": {
@@ -14,5 +21,6 @@
     "w": 800,
     "h": 600
   },
-  "accent": "#d97706"
+  "accent": "#10b981",
+  "entry": "index.html"
 }
