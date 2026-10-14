@@ -17,7 +17,7 @@
 					type="button"
 					aria-pressed={active === t}
 					onclick={() => (active = t)}
-					class="shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-xs transition-colors duration-200 {active ===
+					class="min-h-6 shrink-0 rounded-full border px-3.5 py-1.5 font-mono text-xs transition-colors duration-200 {active ===
 					t
 						? 'border-accent bg-accent text-wall'
 						: 'border-line text-mute hover:text-ink'}"

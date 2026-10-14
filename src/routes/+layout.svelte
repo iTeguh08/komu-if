@@ -38,14 +38,14 @@
 					>
 				</summary>
 				<ul
-					class="absolute right-0 z-10 mt-3 max-h-80 w-60 overflow-y-auto rounded-xs border border-line bg-wall p-1"
+					class="absolute right-0 z-10 mt-3 max-h-80 w-[min(15rem,calc(100vw-2.5rem))] overflow-y-auto rounded-xs border border-line bg-wall p-1"
 				>
 					{#each rooms as r (r.handle)}
 						<li>
 							<a
 								href={roomUrl(r)}
 								data-sveltekit-reload
-								class="block rounded-xs px-3 py-2 text-ink hover:bg-line">{r.name}</a
+								class="block min-h-6 rounded-xs px-3 py-2.5 text-ink hover:bg-line">{r.name}</a
 							>
 						</li>
 					{:else}

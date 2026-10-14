@@ -4,7 +4,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 // BASE_PATH is set in CI to /<repo-name> for GitHub Pages; empty locally.
-const base = process.env.BASE_PATH ?? '';
+const envBase = (globalThis as { process?: { env?: Record<string, string> } }).process?.env?.BASE_PATH ?? '';
+const base: '' | `/${string}` = envBase === '' ? '' : (envBase.startsWith('/') ? (envBase as `/${string}`) : `/${envBase}`);
 
 export default defineConfig({
 	plugins: [
