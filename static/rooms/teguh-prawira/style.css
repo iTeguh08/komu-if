@@ -80,9 +80,11 @@ body {
 	position: absolute;
 	left: 6vw;
 	top: 40vh;
-	font: 400 clamp(3rem, calc(var(--u) * 9), 6rem) / 1.02 'Instrument Serif', serif;
+	font: 400 clamp(3rem, calc(var(--u) * 9), 6rem) / 1.12 'Instrument Serif', serif;
 	letter-spacing: -0.02em;
 	text-wrap: balance;
+	padding-block: 0.06em;
+	overflow: visible;
 }
 .title span {
 	display: block;
@@ -329,7 +331,8 @@ body {
 		top: 32%;
 		width: 52%;
 		font-size: clamp(2rem, 10vw, 2.6rem);
-		line-height: 1;
+		line-height: 1.14;
+		padding-block: 0.08em;
 	}
 	.title span { margin-top: 0.65rem; font-size: 0.8125rem; line-height: 1.5; }
 	.quote { left: 4%; top: 52%; width: 68%; }
