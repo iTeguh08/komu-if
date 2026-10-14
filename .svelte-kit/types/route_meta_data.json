@@ -1,9 +1,0 @@
-{
-	"/": [
-		"src/routes/+layout.ts",
-		"src/routes/+layout.ts"
-	],
-	"/rooms.json": [
-		"src/routes/rooms.json/+server.ts"
-	]
-}
