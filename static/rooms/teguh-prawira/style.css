@@ -23,6 +23,9 @@
 	--x: 30vw;
 	--y: 40vh;
 	--ease: cubic-bezier(0.16, 1, 0.3, 1);
+	--space-section: clamp(3.5rem, 10vw, 6.5rem);
+	--space-block: clamp(1.5rem, 4vw, 2.5rem);
+	--space-tight: clamp(0.65rem, 2vw, 1rem);
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -77,15 +80,15 @@ body {
 	position: absolute;
 	left: 6vw;
 	top: 40vh;
-	font: 400 clamp(3rem, calc(var(--u) * 9), 6rem) / 0.95 'Instrument Serif', serif;
+	font: 400 clamp(3rem, calc(var(--u) * 9), 6rem) / 1.02 'Instrument Serif', serif;
 	letter-spacing: -0.02em;
 	text-wrap: balance;
 }
 .title span {
 	display: block;
-	margin-top: 1.1rem;
-	font: 500 0.95rem / 1.2 'Geist', sans-serif;
-	letter-spacing: 0.01em;
+	margin-top: var(--space-tight);
+	font: 500 clamp(0.8125rem, 2vw, 0.95rem) / 1.45 'Geist', sans-serif;
+	letter-spacing: 0.02em;
 	color: var(--mute);
 }
 
@@ -155,24 +158,41 @@ body {
 
 
 /* achievement: stacked photo collage (layout after svelte.dev "join our friendly community") */
-.achievement { position: relative; background: var(--floor); padding: 6rem 0; }
+.achievement {
+	position: relative;
+	background: var(--floor);
+	padding: var(--space-section) 0 clamp(4.5rem, 12vw, 7.5rem);
+	border-top: 1px solid rgb(58 52 70 / 0.45);
+}
 .achievement::after { content: ''; display: table; clear: both; }
-.ach-inner { max-width: 200rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem); }
+.ach-inner {
+	max-width: 72rem;
+	margin: 0 auto;
+	padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
 .achievement h2 {
 	text-align: center;
-	font: 400 clamp(2.5rem, 5vw, 4.5rem) / 1 'Instrument Serif', serif;
-	letter-spacing: -0.01em;
+	margin: 0;
+	font: 400 clamp(2.25rem, 5.5vw, 4rem) / 1.05 'Instrument Serif', serif;
+	letter-spacing: -0.02em;
 	text-wrap: balance;
 	color: var(--ink);
 }
-.achievement p { max-width: 28em; margin: 1.25rem auto 0; text-align: center; font: 400 1.0625rem / 1.55 'Geist', sans-serif; color: var(--mute); text-wrap: pretty; }
+.achievement p {
+	max-width: 32em;
+	margin: var(--space-block) auto 0;
+	text-align: center;
+	font: 400 clamp(1rem, 2.4vw, 1.0625rem) / 1.6 'Geist', sans-serif;
+	color: var(--mute);
+	text-wrap: pretty;
+}
 .social-nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.75rem;
-	margin: 1.75rem auto 0;
-	max-width: 28em;
+	margin: var(--space-block) auto 0;
+	max-width: 32em;
 }
 .social-btn {
 	display: inline-flex;
@@ -192,7 +212,13 @@ body {
 }
 .social-btn:hover { border-color: var(--amber); background: #221e2c; }
 .social-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
-.ach-collage { position: relative; width: 100%; aspect-ratio: 960 / 336; margin: 0; container-type: inline-size; }
+.ach-collage {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 960 / 336;
+	margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+	container-type: inline-size;
+}
 .ach {
 	position: absolute;
 	margin: 0;
@@ -217,7 +243,13 @@ body {
 	color: var(--ink);
 	background: linear-gradient(transparent, rgb(8 6 12 / 0.7));
 }
-.ach-credit { position: relative; top: max(-2vw, calc(-0.02 * (120rem + 2 * 3rem))); margin-top: 0 !important; font-size: 0.9375rem !important; }
+.ach-credit {
+	position: static;
+	margin-top: var(--space-block) !important;
+	font: 400 0.875rem / 1.55 'Geist', sans-serif !important;
+	color: var(--mute);
+	opacity: 0.9;
+}
 
 
 /* darkness */
@@ -248,7 +280,7 @@ body {
 	width: min(34rem, calc(100vw - 2rem));
 	transform: translateX(-50%);
 	text-align: center;
-	font: 400 clamp(1.25rem, 3.2vw, 1.75rem) / 1.25 'Instrument Serif', serif;
+	font: 400 clamp(1.125rem, 3vw, 1.625rem) / 1.35 'Instrument Serif', serif;
 	text-wrap: balance;
 	color: var(--ink);
 	text-shadow: 0 2px 12px #000;
@@ -297,10 +329,10 @@ body {
 		top: 32%;
 		width: 52%;
 		font-size: clamp(2rem, 10vw, 2.6rem);
-		line-height: 0.95;
+		line-height: 1;
 	}
-	.title span { margin-top: 0.45rem; font-size: 0.75rem; }
-	.quote { left: 4%; top: 50%; width: 70%; }
+	.title span { margin-top: 0.65rem; font-size: 0.8125rem; line-height: 1.5; }
+	.quote { left: 4%; top: 52%; width: 68%; }
 	.radio { left: 76%; top: 51%; width: 20%; }
 	.chess { left: 3%; bottom: 30%; width: 24%; }
 	.rubik { left: 30%; bottom: 30%; width: 14%; --c: 9vw; }
@@ -317,7 +349,9 @@ body {
 	.dark, .glow, .lamp svg, .switch, .obj .tag { transition: none; }
 }
 
-@media (min-width: 900px) { .achievement { padding: 10rem 0; } }
+@media (min-width: 900px) {
+	.achievement { padding: clamp(5.5rem, 8vw, 7.5rem) 0 clamp(5rem, 7vw, 8rem); }
+}
 
 .ach-collage .ach-11{left:13.333%;top:27.381%;width:75.208%;height:72.024%;z-index:2;--tint:#2b3a52;}
 .ach-collage .ach-1{left:14.479%;top:5.952%;width:12.812%;height:19.940%;z-index:1;transform:rotate(-0.4deg);--tint:#3a3346;}
@@ -331,10 +365,17 @@ body {
 .ach-collage .ach-9{left:88.542%;top:34.821%;width:10.729%;height:32.440%;z-index:3;transform:rotate(0.5deg);--tint:#1f5a8a;}
 .ach-collage .ach-10{left:88.542%;top:67.262%;width:10.938%;height:30.357%;z-index:3;--tint:#3a3a46;}
 
-@media (max-width: 640px) { .ach figcaption { display: none; } .ach-n { font-size: 7cqw; } .ach-11 .ach-n { font-size: 16cqw; } .achievement p { font-size: 1rem; } }
+@media (max-width: 640px) {
+	.ach figcaption { display: none; }
+	.ach-n { font-size: 7cqw; }
+	.ach-11 .ach-n { font-size: 16cqw; }
+	.achievement { padding-top: 3rem; padding-bottom: 3.5rem; }
+	.ach-collage { aspect-ratio: 4 / 3; margin-top: 2rem; }
+	.social-nav { margin-top: 1.5rem; }
+}
 
-.q-text { display: block; font: 400 clamp(1.25rem, calc(var(--u) * 2.3), 2.1rem) / 1.15 'Instrument Serif', serif; color: var(--ink); text-wrap: balance; }
-.q-by { display: block; margin-top: 0.6rem; font: 500 0.8rem / 1 'Geist', sans-serif; letter-spacing: 0.04em; color: var(--mute); }
+.q-text { display: block; font: 400 clamp(1.125rem, calc(var(--u) * 2.1), 1.95rem) / 1.22 'Instrument Serif', serif; color: var(--ink); text-wrap: balance; }
+.q-by { display: block; margin-top: 0.75rem; font: 500 0.8125rem / 1.4 'Geist', sans-serif; letter-spacing: 0.03em; color: var(--mute); }
 .chess svg { transform: perspective(320px) rotateX(58deg); transform-origin: 50% 100%; transition: transform 0.4s var(--ease); }
 .chess:hover svg { transform: perspective(320px) rotateX(48deg); }
 .b-dark { fill: #2a2433; } .b-light { fill: #4a4256; }
