@@ -166,6 +166,32 @@ body {
 	color: var(--ink);
 }
 .achievement p { max-width: 28em; margin: 1.25rem auto 0; text-align: center; font: 400 1.0625rem / 1.55 'Geist', sans-serif; color: var(--mute); text-wrap: pretty; }
+.social-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.75rem;
+	margin: 1.75rem auto 0;
+	max-width: 28em;
+}
+.social-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0.65rem 1.35rem;
+	font: 500 0.8125rem / 1 'Geist', sans-serif;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--ink);
+	text-decoration: none;
+	border: 1px solid #3a3446;
+	border-radius: 999px;
+	background: #0b0a0f;
+	transition: border-color 0.2s, background 0.2s;
+}
+.social-btn:hover { border-color: var(--amber); background: #221e2c; }
+.social-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
 .ach-collage { position: relative; width: 100%; aspect-ratio: 960 / 336; margin: 0; container-type: inline-size; }
 .ach {
 	position: absolute;
