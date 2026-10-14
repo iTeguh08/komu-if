@@ -12,8 +12,8 @@ export type Room = {
 	entry?: string;
 };
 
-// Every static/rooms/<handle>/room.json becomes a room. See docs/SCHEMA.md.
-const mods = import.meta.glob<Room>('/static/rooms/*/room.json', { eager: true, import: 'default' });
+// Every static/rooms/<handle>/room.json becomes a room. Folders starting with _ (e.g. _template) are skipped.
+const mods = import.meta.glob<Room>('/static/rooms/[!_]*/room.json', { eager: true, import: 'default' });
 
 export const rooms: Room[] = Object.values(mods).sort((a, b) => a.name.localeCompare(b.name));
 
