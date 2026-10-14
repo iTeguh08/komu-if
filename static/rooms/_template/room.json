@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "handle": "your-handle",
+  "name": "Your Name",
+  "tagline": "One line about your room.",
+  "door_code": "00",
+  "tags": ["art"],
+  "thumb": { "src": "thumb.webp", "w": 800, "h": 1000 },
+  "accent": "#ff5a36",
+  "entry": "index.html"
+}
