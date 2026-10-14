@@ -248,24 +248,43 @@ body {
 @media (pointer: coarse) { .scene, .obj { cursor: auto; } }
 .switch { cursor: pointer; }
 
+.quote { left: 25vw; top: 9vh; width: calc(var(--u) * 24); text-align: left; }
+.radio { left: 40vw; top: 37vh; width: calc(var(--u) * 7); }
+.arcade { left: 27vw; bottom: 9vh; width: calc(var(--u) * 9); }
+.chess { left: 11vw; bottom: 6vh; width: calc(var(--u) * 9.5); }
+.rubik { left: 22vw; bottom: 6vh; width: calc(var(--u) * 4.4); aspect-ratio: 1; --c: calc(var(--u) * 3.6); }
+.pad { left: 38vw; bottom: 11vh; width: calc(var(--u) * 8); }
+
 @media (max-width: 720px) {
-	.scene { min-height: 640px; }
-	.title { top: 22vh; }
-	.poster { left: 6vw; top: 4vh; width: 28vw; }
-	.window { left: 46vw; top: 4vh; width: 46vw; }
-	.shelf { left: 64vw; top: 32vh; width: 30vw; }
-	.set { left: 5vw; bottom: 12vh; width: 90vw; }
-	.plant { left: 78vw; bottom: 8vh; width: 14vw; }
-	.wall { inset: 0 0 20% 0; }
-	.floor { inset: 80% 0 0 0; }
-	.quote { left: 6vw; top: 43vh; width: 52vw; }
-	.radio { left: 64vw; top: 53vh; width: 16vw; }
-	.arcade { left: 73vw; bottom: 8vh; width: 14vw; }
-	.chess { left: 3vw; bottom: 10vh; width: 30vw; }
-	.rubik { left: 38vw; bottom: 10vh; width: 14vw; --c: 10vw; }
-	.pad { left: 55vw; bottom: 10vh; width: 16vw; }
+	.scene {
+		min-height: max(100dvh, 760px);
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.wall { inset: 0 0 28% 0; }
+	.floor { inset: 72% 0 0 0; }
+	.poster { left: 4%; top: 3%; width: 34%; }
+	.window { left: 50%; top: 3%; width: 44%; }
+	.shelf { left: 58%; top: 34%; width: 36%; }
+	.title {
+		left: 4%;
+		top: 32%;
+		width: 52%;
+		font-size: clamp(2rem, 10vw, 2.6rem);
+		line-height: 0.95;
+	}
+	.title span { margin-top: 0.45rem; font-size: 0.75rem; }
+	.quote { left: 4%; top: 50%; width: 70%; }
+	.radio { left: 76%; top: 51%; width: 20%; }
+	.chess { left: 3%; bottom: 30%; width: 24%; }
+	.rubik { left: 30%; bottom: 30%; width: 14%; --c: 9vw; }
+	.pad { left: 48%; bottom: 32%; width: 22%; }
+	.arcade { left: 74%; bottom: 26%; width: 20%; }
+	.set { left: 10%; bottom: 6%; width: 80%; }
 	.plant { display: none; }
-	.player { width: 170px; bottom: 4rem; }
+	.note { bottom: 5.5rem; }
+	.player { width: 160px; bottom: 5.5rem; }
+	.switch { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -288,26 +307,19 @@ body {
 
 @media (max-width: 640px) { .ach figcaption { display: none; } .ach-n { font-size: 7cqw; } .ach-11 .ach-n { font-size: 16cqw; } .achievement p { font-size: 1rem; } }
 
-/* hobbies, quote, radio, arcade */
-.quote { left: 25vw; top: 9vh; width: calc(var(--u) * 24); text-align: left; }
 .q-text { display: block; font: 400 clamp(1.25rem, calc(var(--u) * 2.3), 2.1rem) / 1.15 'Instrument Serif', serif; color: var(--ink); text-wrap: balance; }
 .q-by { display: block; margin-top: 0.6rem; font: 500 0.8rem / 1 'Geist', sans-serif; letter-spacing: 0.04em; color: var(--mute); }
-.radio { left: 40vw; top: 37vh; width: calc(var(--u) * 7); }
-.arcade { left: 27vw; bottom: 9vh; width: calc(var(--u) * 9); }
-.chess { left: 11vw; bottom: 6vh; width: calc(var(--u) * 9.5); }
 .chess svg { transform: perspective(320px) rotateX(58deg); transform-origin: 50% 100%; transition: transform 0.4s var(--ease); }
 .chess:hover svg { transform: perspective(320px) rotateX(48deg); }
 .b-dark { fill: #2a2433; } .b-light { fill: #4a4256; }
 .pc { font: 400 34px / 1 serif; fill: #e9dcc3; stroke: none; }
 .pc.k { fill: var(--amber); }
-.rubik { left: 22vw; bottom: 6vh; width: calc(var(--u) * 4.4); aspect-ratio: 1; --c: calc(var(--u) * 3.6); }
 .cube { position: absolute; left: 50%; top: 50%; width: var(--c); height: var(--c); margin: calc(var(--c) / -2); transform-style: preserve-3d; transform: rotateX(-24deg) rotateY(-32deg); animation: spin 14s linear infinite; }
 .cube.whirl { animation: whirl 0.9s var(--ease); }
 .cube .face { position: absolute; inset: 0; display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); gap: 2px; padding: 2px; background: #0d0b11; }
 .cube .face i { display: block; }
 @keyframes spin { to { transform: rotateX(-24deg) rotateY(328deg); } }
 @keyframes whirl { from { transform: rotateX(-24deg) rotateY(-32deg); } to { transform: rotateX(-24deg) rotateY(688deg); } }
-.pad { left: 38vw; bottom: 11vh; width: calc(var(--u) * 8); }
 .pbtn { fill: #3a3446; stroke: var(--line); stroke-width: 2; }
 .pad.press .pbtn { animation: blink 0.5s steps(2) 3; }
 .pad.press .p2 { animation-delay: 0.1s; } .pad.press .p3 { animation-delay: 0.2s; } .pad.press .p4 { animation-delay: 0.3s; }
