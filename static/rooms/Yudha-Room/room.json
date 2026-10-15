@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "handle": "Yudha-Room",
+  "door_code": "52",
+  "name": "Yudha",
+  "tagline": "Room dalam proses.",
+  "tags": ["wip"],
+  "thumb": { "src": "thumb.webp", "w": 800, "h": 1000 },
+  "accent": "#6b8cae",
+  "entry": "index.html"
+}
